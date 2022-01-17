@@ -910,11 +910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1222009429965483268, guid: c75bf5adcece1364eadc9d97f1da413e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.6523886
+      value: 7.09
       objectReference: {fileID: 0}
     - target: {fileID: 1222009429965483268, guid: c75bf5adcece1364eadc9d97f1da413e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5725956
+      value: -6.01
       objectReference: {fileID: 0}
     - target: {fileID: 1222009429965483268, guid: c75bf5adcece1364eadc9d97f1da413e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -948,9 +948,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1222009430303600028, guid: c75bf5adcece1364eadc9d97f1da413e, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222009430303600028, guid: c75bf5adcece1364eadc9d97f1da413e, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222009430303600028, guid: c75bf5adcece1364eadc9d97f1da413e, type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1222009430303600029, guid: c75bf5adcece1364eadc9d97f1da413e, type: 3}
       propertyPath: Sliced
       value: 
       objectReference: {fileID: 4734871284518789959, guid: 4222a74136e50a246a1b9bfc9598e9c6, type: 3}
+    - target: {fileID: 1222009430303600029, guid: c75bf5adcece1364eadc9d97f1da413e, type: 3}
+      propertyPath: jumpHeight
+      value: 1.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c75bf5adcece1364eadc9d97f1da413e, type: 3}
