@@ -18,7 +18,7 @@ public class Main : MonoBehaviour
     void Update()
     {
         var rand = new System.Random();
-        num = rand.Next(0, 3);
+        num = rand.Next(0, 4);
         x = rand.Next(-7,7);
         if(recalculateValue()){
             Debug.Log(num);
