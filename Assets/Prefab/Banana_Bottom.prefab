@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3563965527142196743}
   - component: {fileID: 3563965527145106319}
   - component: {fileID: 3563965527144408263}
+  - component: {fileID: -527385264816090568}
+  - component: {fileID: -7152026857219788526}
   m_Layer: 0
   m_Name: Banana_Bottom
   m_TagString: Untagged
@@ -82,3 +84,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-527385264816090568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3563965527141909631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35dffba0a512d90449abd1d8a58c0935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &-7152026857219788526
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3563965527141909631}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

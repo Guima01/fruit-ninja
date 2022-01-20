@@ -13,6 +13,8 @@ public class Sliced : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(transform.position.y < -6.0f){
+            Destroy(gameObject);
+        }
     }
 }

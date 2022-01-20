@@ -22,8 +22,11 @@ public class Fruit : MonoBehaviour
         if (transform.position.y < 0.2f && applyForce){
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight), ForceMode2D.Force); 
         }
-        else {
+        else if(applyForce == true){
             applyForce = false;
+        }
+        if(applyForce == false && transform.position.y < -6.0f){
+            Destroy(gameObject);
         }
     }
 
