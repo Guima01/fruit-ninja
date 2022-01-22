@@ -20,6 +20,8 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 to = new Vector3(0,0,0);
+        transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, to, Time.deltaTime);
         if (transform.position.y < 0.2f && applyForce){
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight), ForceMode2D.Force); 
         }
