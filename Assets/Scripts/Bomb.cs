@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Fruit : MonoBehaviour
+public class Bomb : MonoBehaviour
 {
     public GameObject Sliced;
     public float jumpHeight = 5.0f;
@@ -19,9 +20,6 @@ public class Fruit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float degrees = 70;
-        Vector3 to = new Vector3(degrees,degrees,degrees);
-        transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, to, Time.deltaTime);
         if (transform.position.y < 0.2f && applyForce){
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight), ForceMode2D.Force); 
         }
@@ -35,11 +33,7 @@ public class Fruit : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Knife"){
-            Destroy(gameObject);
-            GameObject appleLeft = Instantiate(Sliced, transform.position + new Vector3 (-0.2f, 0, 0), Quaternion.identity);
-            appleLeft.transform.Rotate(0, -70, 0);
-            GameObject appleRight = Instantiate(Sliced, transform.position + new Vector3 (0.2f, 0, 0), Quaternion.identity);
-            appleRight.transform.Rotate(0, 70, 0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

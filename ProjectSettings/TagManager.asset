@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Canvas
+    uniqueID: 1096533221
+    locked: 0
+  - name: knife
+    uniqueID: 1141585551
+    locked: 0
