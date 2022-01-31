@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CustomCursor : MonoBehaviour
 {
@@ -9,8 +10,15 @@ public class CustomCursor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+        if (SceneManager.GetActiveScene().buildIndex != 1){
+            Cursor.visible = false;
+        }
+
     }
+
+    void Awake () {
+         Cursor.visible = true;
+     }
 
     // Update is called once per frame
     void Update()

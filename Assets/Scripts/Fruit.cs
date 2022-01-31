@@ -7,23 +7,24 @@ public class Fruit : MonoBehaviour
     public GameObject Sliced;
     public float jumpHeight = 5.0f;
     public bool applyForce = true;
+    public float thrust = 500.0f;
     int num;
     // Start is called before the first frame update
     void Start()
     {
         var rand = new System.Random();
         num = rand.Next(-7, 7);
-        transform.position = new Vector3(num,-6.0f,0);
+        transform.position = new Vector3(num, -6.0f,0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float degrees = 70;
+        float degrees = 50;
         Vector3 to = new Vector3(degrees,degrees,degrees);
         transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, to, Time.deltaTime);
         if (transform.position.y < 0.2f && applyForce){
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight), ForceMode2D.Force); 
+            GetComponent<Rigidbody2D>().AddForce(Time.timeScale * thrust  * transform.up * 0.1f); 
         }
         else if(applyForce == true){
             applyForce = false;
@@ -41,5 +42,10 @@ public class Fruit : MonoBehaviour
             GameObject appleRight = Instantiate(Sliced, transform.position + new Vector3 (0.2f, 0, 0), Quaternion.identity);
             appleRight.transform.Rotate(0, 70, 0);
         }
+    }
+
+     void Awake () {
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 60;
     }
 }

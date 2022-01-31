@@ -8,6 +8,7 @@ public class Bomb : MonoBehaviour
     public GameObject Sliced;
     public float jumpHeight = 5.0f;
     public bool applyForce = true;
+    public float thrust = 500.0f;
     int num;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class Bomb : MonoBehaviour
         Vector3 to = new Vector3(0,0,0);
         transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, to, Time.deltaTime);
         if (transform.position.y < 0.2f && applyForce){
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight), ForceMode2D.Force); 
+            GetComponent<Rigidbody2D>().AddForce(Time.timeScale * thrust  * transform.up * 0.1f); 
         }
         else if(applyForce == true){
             applyForce = false;
@@ -37,5 +38,10 @@ public class Bomb : MonoBehaviour
         if(other.gameObject.tag == "Knife"){
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    void Awake () {
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 60;
     }
 }
